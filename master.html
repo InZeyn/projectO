@@ -113,6 +113,31 @@
                 transform: translateY(-5px);
             }
         }
+
+        footer {
+            margin-top: 2rem;
+            text-align: center;
+        }
+
+        .copy-button {
+            background: #00ffcc;
+            color: #0a0a0a;
+            border: none;
+            padding: 0.75rem 1.5rem;
+            border-radius: 8px;
+            font-size: 1rem;
+            font-weight: bold;
+            cursor: pointer;
+            transition: background 0.3s ease;
+        }
+
+        .copy-button:hover {
+            background: #00ccaa;
+        }
+
+        .copy-button:active {
+            transform: scale(0.95);
+        }
     </style>
 </head>
 <body>
@@ -157,6 +182,50 @@
                 <li><span class="emoji">🍹</span> 11</li>
             </ul>
         </div>
+
+        <footer>
+            <button class="copy-button" onclick="copyData()">Copiar Datos Organizados</button>
+        </footer>
     </div>
+
+    <script>
+        function copyData() {
+            // Organizar los datos en un formato legible
+            const data = `
+                Vacaciones Roger Bravo ✈️
+
+                Marzo 2025 🌸
+                - 21 📅
+                - 24 ✈️
+                - 25 🏖️
+                - 26 🍹
+
+                Septiembre 2025 🍂
+                - 15 📅
+                - 17 ✈️
+                - 18 🏖️
+
+                Diciembre 2025 🎄
+                - 22 📅
+                - 23 ✈️
+                - 26 🏖️
+                - 29 🍹
+
+                Abril 2026 🌷
+                - 6 📅
+                - 7 ✈️
+                - 8 🏖️
+                - 11 🍹
+            `;
+
+            navigator.clipboard.writeText(data)
+                .then(() => {
+                    alert("Datos copiados al portapapeles ✅");
+                })
+                .catch(() => {
+                    alert("Error al copiar los datos ❌");
+                });
+        }
+    </script>
 </body>
 </html>
