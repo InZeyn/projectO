@@ -24,6 +24,18 @@
             box-shadow: 0 4px 6px rgba(0, 0, 0, 0.5);
             max-width: 600px;
             width: 100%;
+            animation: fadeIn 1s ease-in-out;
+        }
+
+        @keyframes fadeIn {
+            from {
+                opacity: 0;
+                transform: translateY(-20px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
         }
 
         h1 {
@@ -34,6 +46,16 @@
             font-weight: bold;
             text-transform: uppercase;
             letter-spacing: 2px;
+            animation: glow 2s infinite alternate;
+        }
+
+        @keyframes glow {
+            0% {
+                text-shadow: 0 0 5px #00ffcc, 0 0 10px #00ffcc, 0 0 20px #00ffcc;
+            }
+            100% {
+                text-shadow: 0 0 10px #00ffcc, 0 0 20px #00ffcc, 0 0 40px #00ffcc;
+            }
         }
 
         h2 {
@@ -56,11 +78,18 @@
             margin: 0.5rem 0;
             padding: 0.75rem;
             border-radius: 8px;
+            transition: transform 0.2s ease, box-shadow 0.2s ease;
             color: #e0e0e0;
             display: flex;
             align-items: center;
             gap: 10px;
             font-weight: bold;
+        }
+
+        li:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 4px 8px rgba(0, 255, 204, 0.2);
+            background: #3a3a3a;
         }
 
         .month {
@@ -69,6 +98,20 @@
 
         .month:last-child {
             margin-bottom: 0;
+        }
+
+        .emoji {
+            font-size: 1.2rem;
+            animation: float 3s ease-in-out infinite;
+        }
+
+        @keyframes float {
+            0%, 100% {
+                transform: translateY(0);
+            }
+            50% {
+                transform: translateY(-5px);
+            }
         }
 
         footer {
@@ -85,80 +128,83 @@
             white-space: pre-wrap;
             overflow-x: auto;
             border: 1px solid #00ffcc;
-            cursor: text;
+        }
+
+        .data-box:focus {
+            outline: none;
+            border-color: #00ccaa;
         }
     </style>
 </head>
 <body>
     <div class="container">
-        <h1>Vacaciones Roger Bravo</h1>
+        <h1>Vacaciones Roger Bravo ✈️</h1>
 
         <div class="month">
-            <h2>Marzo 2025</h2>
+            <h2>Marzo 2025 🌸</h2>
             <ul>
-                <li>21</li>
-                <li>24</li>
-                <li>25</li>
-                <li>26</li>
+                <li><span class="emoji">📅</span> 21</li>
+                <li><span class="emoji">✈️</span> 24</li>
+                <li><span class="emoji">🏖️</span> 25</li>
+                <li><span class="emoji">🍹</span> 26</li>
             </ul>
         </div>
 
         <div class="month">
-            <h2>Septiembre 2025</h2>
+            <h2>Septiembre 2025 �</h2>
             <ul>
-                <li>15</li>
-                <li>17</li>
-                <li>18</li>
+                <li><span class="emoji">📅</span> 15</li>
+                <li><span class="emoji">✈️</span> 17</li>
+                <li><span class="emoji">🏖️</span> 18</li>
             </ul>
         </div>
 
         <div class="month">
-            <h2>Diciembre 2025</h2>
+            <h2>Diciembre 2025 🎄</h2>
             <ul>
-                <li>22</li>
-                <li>23</li>
-                <li>26</li>
-                <li>29</li>
+                <li><span class="emoji">📅</span> 22</li>
+                <li><span class="emoji">✈️</span> 23</li>
+                <li><span class="emoji">🏖️</span> 26</li>
+                <li><span class="emoji">🍹</span> 29</li>
             </ul>
         </div>
 
         <div class="month">
-            <h2>Abril 2026</h2>
+            <h2>Abril 2026 🌷</h2>
             <ul>
-                <li>6</li>
-                <li>7</li>
-                <li>8</li>
-                <li>11</li>
+                <li><span class="emoji">📅</span> 6</li>
+                <li><span class="emoji">✈️</span> 7</li>
+                <li><span class="emoji">🏖️</span> 8</li>
+                <li><span class="emoji">🍹</span> 11</li>
             </ul>
         </div>
 
-          
-    </div>
-      <div class="data-box" tabindex="0">
-                Vacaciones Roger Bravo
+            <div class="data-box" tabindex="0">
+                Vacaciones Roger Bravo ✈️
 
-                Marzo 2025
-                - 21
-                - 24
-                - 25
-                - 26
+                Marzo 2025 🌸
+                - 21 📅
+                - 24 ✈️
+                - 25 🏖️
+                - 26 🍹
 
-                Septiembre 2025
-                - 15
-                - 17
-                - 18
+                Septiembre 2025 🍂
+                - 15 📅
+                - 17 ✈️
+                - 18 🏖️
 
-                Diciembre 2025
-                - 22
-                - 23
-                - 26
-                - 29
+                Diciembre 2025 🎄
+                - 22 📅
+                - 23 ✈️
+                - 26 🏖️
+                - 29 🍹
 
-                Abril 2026
-                - 6
-                - 7
-                - 8
-                - 11
+                Abril 2026 🌷
+                - 6 📅
+                - 7 ✈️
+                - 8 🏖️
+                - 11 🍹
             </div>
+    </div>
 </body>
 </html>
